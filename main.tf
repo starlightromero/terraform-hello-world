@@ -57,8 +57,8 @@ resource "aws_route_table" "main" {
   }
 
   route {
-    cidr_block = "::/0"
-    gateway_id = aws_internet_gateway.main.id
+    ipv6_cidr_block = "::/0"
+    gateway_id      = aws_internet_gateway.main.id
   }
 
   tags = {
