@@ -48,7 +48,7 @@ resource "aws_internet_gateway" "main" {
 
 # Route Table
 
-resource "aws_route_table" "r" {
+resource "aws_route_table" "main" {
   vpc_id = aws_vpc.main.id
 
   route {
