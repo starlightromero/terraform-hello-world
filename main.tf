@@ -140,7 +140,7 @@ resource "aws_network_interface" "main" {
 # Requires Internet Gateway to be defined
 
 resource "aws_eip" "main" {
-  vpc                       = tru
+  vpc                       = true
   network_interface         = aws_network_interface.main.id
   associate_with_private_ip = "10.0.1.50"
   depends_on                = [aws_internet_gateway.main]
