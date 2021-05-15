@@ -21,6 +21,11 @@ variable "availability_zone" {
   default = "us-east-1a"
 }
 
+variable "key_name" {
+  description = "AWS instance key name"
+  type        = string
+}
+
 # VPC
 
 resource "aws_vpc" "main" {
@@ -152,7 +157,7 @@ resource "aws_instance" "web" {
   ami               = "ami-09e67e426f25ce0d7"
   instance_type     = "t2.micro"
   availability_zone = var.availability_zone
-  key_name          = "terraform-key"
+  key_name          = var.key_name
 
   network_interface {
     device_index         = 0
